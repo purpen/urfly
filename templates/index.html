@@ -1,0 +1,24 @@
+{% extends 'layout/base.html' %}
+
+{% block content %}
+<h4>请输入长网址</h4>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'build' %}" method="post">
+	{% csrf_token %}
+	{{ form }}
+
+	<input type="submit" value="缩短网址" />
+</form>
+
+{% if short_url %}
+	<p>
+		<label>短网址：</label> {{ short_url }}
+	</p>
+	<p>
+		<label>原网址：</label> {{ link }}
+	</p>
+{% endif %}
+
+{% endblock %}

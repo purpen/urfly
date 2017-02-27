@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}短网址{% endblock %}</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'goto/css/semantic.min.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'goto/css/style.css' %}" />
+</head>
+<body>
+
+{% block content %}{% endblock %}
+
+{% include 'block/bottom.html' %}
+
+</body>
+</html>
